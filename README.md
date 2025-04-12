@@ -29,7 +29,7 @@ Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
 Then, you can add this bucket to your Scoop installation by running the following command:
 
 ```powershell
-scoop bucket add moonwx https://github.com/MoonWX/scoop-bucket
+scoop bucket add moonwx https://github.com/MoonWX/scoop_bucket
 ```
 
 After that, you can install any of the applications in this bucket by running the following command:
