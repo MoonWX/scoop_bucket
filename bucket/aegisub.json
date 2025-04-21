@@ -17,8 +17,7 @@
     ],
     "persist": [
         "config.json",
-        "hotkey.json",
-        "config"
+        ["hotkey.json", "hotkey.json", "file"]
     ],
     "checkver": {
         "github": "https://github.com/TypesettingTools/Aegisub"    
