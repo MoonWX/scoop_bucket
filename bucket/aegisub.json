@@ -15,9 +15,26 @@
             "Aegisub"
         ]
     ],
+    "pre_install": [
+    "if (Test-Path \"$persist_dir\\hotkey.json\") {",
+    "    if ((Get-Item \"$persist_dir\\hotkey.json\") -is [System.IO.DirectoryInfo]) {",
+    "        Remove-Item \"$persist_dir\\hotkey.json\" -Recurse -Force",
+    "        New-Item \"$persist_dir\\hotkey.json\" -ItemType File -Force | Out-Null",
+    "    }",
+    "}"
+    ],
     "persist": [
         "config.json",
-        ["hotkey.json", "hotkey.json", "file"]
+        "hotkey.json",
+        "config"
+    ],
+    "post_install": [
+    "if (Test-Path \"$dir\\hotkey.json\") {",
+    "    if ((Get-Item \"$dir\\hotkey.json\") -is [System.IO.DirectoryInfo]) {",
+    "        Remove-Item \"$dir\\hotkey.json\" -Recurse -Force",
+    "        New-Item \"$dir\\hotkey.json\" -ItemType File -Force | Out-Null", 
+    "    }",
+    "}"
     ],
     "checkver": {
         "github": "https://github.com/TypesettingTools/Aegisub"    
